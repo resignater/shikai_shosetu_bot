@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'memo/index'
   resources :articles
   root 'shikai_shosetu_bot#index'
   
