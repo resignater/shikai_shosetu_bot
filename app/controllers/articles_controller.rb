@@ -5,10 +5,11 @@ class ArticlesController < ApplicationController
   before_action :twitter_client, except: :new
   def twitter_client
     @client = Twitter::REST::Client.new do |config|
-      config.consumer_key = "gVjXgT2wzpYYnyNlEG2Q1NQdU"
-      config.consumer_secret = "bd7AzgtGX8rmyrudZoKrxfTxKnSBuyBGZmLcKoMJBKqFo554v8"
-      config.access_token = "1009345053771173888-KxlKBzMIxnpk5om5VM6JR1LqSSg8yS"
-      config.access_token_secret = "dHytvUrlTSlUfN5zl4gV49SpFXg118WMhogBEUcENZaFE"
+#tyotto yaboyou de zenbu henko sita.
+      config.consumer_key = ENV['CONSUMER_KEY']
+      config.consumer_secret = ENV['CONSUMER_SECRET']
+      config.access_token = ENV['ACCESS_TOKEN']
+      config.access_token_secret = ENV['ACCESS_TOKEN_SECRET']
     end
   end
 

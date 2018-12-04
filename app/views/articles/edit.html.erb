@@ -1,6 +1,9 @@
 <h1>Editing Article</h1>
 
-<%= render 'form', article: @article %>
+<%= form_for @article do |f| %>
+  <%= f.text_area :content, cols: 40, rows: 5 ,maxlength: 140 %><br>
+  <%= f.submit 'edit' %>
+<% end %>
 
 <%= link_to 'Show', @article %> |
 <%= link_to 'Back', articles_path %>
