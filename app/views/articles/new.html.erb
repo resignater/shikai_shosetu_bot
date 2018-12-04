@@ -1,5 +1,8 @@
 <h1>New Article</h1>
-
-<%= render 'form', article: @article %>
-
+<%= form_for @article do |f| %>
+  <%= f.text_area :content, cols: 40, rows: 5 ,maxlength: 140 %>
+  <%= f.submit 'hozon' %>
+<% end %>
+<hr>
+<button type="submit" style = "width: 70px; height: 25px;"><%= link_to 'tweet', post_articles_path %></button>
 <%= link_to 'Back', articles_path %>

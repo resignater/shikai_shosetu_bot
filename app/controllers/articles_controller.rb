@@ -1,5 +1,16 @@
+require "twitter"
+
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :twitter_client, except: :new
+  def twitter_client
+    @client = Twitter::REST::Client.new do |config|
+      config.consumer_key = "gVjXgT2wzpYYnyNlEG2Q1NQdU"
+      config.consumer_secret = "bd7AzgtGX8rmyrudZoKrxfTxKnSBuyBGZmLcKoMJBKqFo554v8"
+      config.access_token = "1009345053771173888-KxlKBzMIxnpk5om5VM6JR1LqSSg8yS"
+      config.access_token_secret = "dHytvUrlTSlUfN5zl4gV49SpFXg118WMhogBEUcENZaFE"
+    end
+  end
 
   # GET /articles
   # GET /articles.json
@@ -50,6 +61,13 @@ class ArticlesController < ApplicationController
       end
     end
   end
+
+def post
+  tweet = Article.order('random()').first
+  status = tweet.content
+  @client.update(status)
+  redirect_to :root
+end
 
   # DELETE /articles/1
   # DELETE /articles/1.json
