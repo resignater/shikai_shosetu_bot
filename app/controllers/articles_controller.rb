@@ -5,7 +5,6 @@ class ArticlesController < ApplicationController
   before_action :twitter_client, except: :new
   def twitter_client
     @client = Twitter::REST::Client.new do |config|
-#tyotto yaboyou de zenbu henko sita.
       config.consumer_key = ENV['CONSUMER_KEY']
       config.consumer_secret = ENV['CONSUMER_SECRET']
       config.access_token = ENV['ACCESS_TOKEN']
@@ -63,12 +62,17 @@ class ArticlesController < ApplicationController
     end
   end
 
-def post
-  tweet = Article.order('random()').first
-  status = tweet.content
-  @client.update(status)
-  redirect_to :root
-end
+  def post
+    tweet = Article.order('random()').first
+    status = tweet.content
+    @client.update(status)
+    redirect_to :root
+  end
+
+  def retweet
+    @client.retweet(1070009453498511362)
+    redirect_to :root
+  end
 
   # DELETE /articles/1
   # DELETE /articles/1.json
