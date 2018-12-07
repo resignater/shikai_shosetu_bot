@@ -63,21 +63,25 @@ class ArticlesController < ApplicationController
   end
 
   def post
-    tweet = Article.order('random()').first
-    if tweet.rtid.present?
-      @client.unretweet(tweet.rtid.to_i)
-      @client.retweet(tweet.url.to_i)
-      tw = @client.user_timeline(screen_name: "shikai_shosetsu", count: 1)
-      tweet.rtid = tw[0].id.to_s
-    elsif tweet.url.present?
-      @client.retweet(tweet.url.to_i)
-      tw = @client.user_timeline(screen_name: "shikai_shosetsu", count: 1)
-      tweet.rtid = tw[0].id.to_s
-    else
+    tweet_options = Article.where(url: nil)
+    if tweet_options.size != 0
+      tweet = tweet_options.shuffle.first
       status = tweet.content
       @client.update(status)
       tw = @client.user_timeline(screen_name: "shikai_shosetsu", count: 1)
       tweet.url = tw[0].id.to_s
+    else
+      tweet = Article.where.not(url: nil).shuffle.first
+      if tweet.rtid.present?
+        @client.unretweet(tweet.rtid.to_i)
+        @client.retweet(tweet.url.to_i)
+        tw = @client.user_timeline(screen_name: "shikai_shosetsu", count: 1)
+        tweet.rtid = tw[0].id.to_s
+      else
+        @client.retweet(tweet.url.to_i)
+        tw = @client.user_timeline(screen_name: "shikai_shosetsu", count: 1)
+        tweet.rtid = tw[0].id.to_s
+      end
     end
     tweet.save
     redirect_to :root
