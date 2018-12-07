@@ -51,6 +51,12 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
+    if @article.url.present?
+      @client.destroy_status(@article.url.to_i)
+      @article.url = nil
+      @article.rtid = nil
+      @article.save
+    end
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
