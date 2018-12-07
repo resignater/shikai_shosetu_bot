@@ -51,12 +51,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
-    if @article.url.present?
-      @client.destroy_status(@article.url.to_i)
-      @article.url = nil
-      @article.rtid = nil
-      @article.save
-    end
+    tweet_delete
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
@@ -101,6 +96,8 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
+    @article = Article.find(params[:id])
+    tweet_delete
     @article.destroy
     respond_to do |format|
       format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
@@ -113,7 +110,14 @@ class ArticlesController < ApplicationController
     def set_article
       @article = Article.find(params[:id])
     end
-
+    def tweet_delete
+      if @article.url.present?
+        @client.destroy_status(@article.url.to_i)
+        @article.url = nil
+        @article.rtid = nil
+        @article.save
+      end
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
       params.require(:article).permit(:content, :url, :rtid)

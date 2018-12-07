@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Articles</h1>
-
+<p>sakujo ga dousa sinainode sibaraku henshu ni totte kaemasu</p>
 <table>
   <thead>
     <tr>
       <th>Content</th>
       <th>URL</th>
-      <th colspan="3"></th>
+      <th colspan=""></th>
     </tr>
   </thead>
 
@@ -17,8 +17,8 @@
         <td><%= article.content %></td>
         <td><%= article.url %></td>
         <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_article_path(article), data: { confirm: 'Henshu suru yo!' }  %></td>
+        <td>Destroy<%#= link_to 'Destroy', article_path(article) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
