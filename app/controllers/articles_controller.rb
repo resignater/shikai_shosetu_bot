@@ -88,11 +88,6 @@ class ArticlesController < ApplicationController
     redirect_to :root
   end
 
-  def retweet
-    @client.retweet(1070009453498511362)
-    redirect_to :root
-  end
-
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy

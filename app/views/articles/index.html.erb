@@ -6,8 +6,7 @@
   <thead>
     <tr>
       <th>Content</th>
-      <th>URL</th>
-      <th colspan=""></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -15,10 +14,8 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= article.content %></td>
-        <td><%= article.url %></td>
         <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article), data: { confirm: 'Henshu suru yo!' }  %></td>
-        <td>Destroy<%#= link_to 'Destroy', article_path(article) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_article_path(article) %></td>
       </tr>
     <% end %>
   </tbody>

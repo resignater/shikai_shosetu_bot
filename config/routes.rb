@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :articles do
     collection do
       get 'post'
-      get 'retweet'
     end
   end
   root 'shikai_shosetu_bot#index'
