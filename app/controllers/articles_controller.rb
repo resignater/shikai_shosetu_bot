@@ -72,7 +72,7 @@ class ArticlesController < ApplicationController
       tw = @client.user_timeline(screen_name: "shikai_shosetsu", count: 1)
       tweet.url = tw[0].id.to_s
     else
-      tweet = Article.where.not(url: nil).shuffle.first
+      tweet = Article.where( 'id >= ?', rand(Article.first.id..Article.last.id) ).first
       if tweet.rtid.present?
         @client.unretweet(tweet.rtid.to_i)
         @client.retweet(tweet.url.to_i)
