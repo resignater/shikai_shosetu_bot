@@ -2,10 +2,6 @@
 <p>If the eddited article were already tweeted, the tweet will be destroyed.</p>
 <p>Moshi henshu sita kiji ga sude ni tweet sareteita baai, tweet wa sakujo saremasu.</p>
 
-<%= form_for @article do |f| %>
-  <%= f.text_area :content, cols: 40, rows: 5 ,maxlength: 140 %><br>
-  <%= f.submit 'edit' %>
-<% end %>
-
+<%= render 'form', article: @article %>
 <%= link_to 'Show', @article %> |
 <%= link_to 'Back', articles_path %>
