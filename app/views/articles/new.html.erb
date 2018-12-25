@@ -1,5 +1,5 @@
 <h1>New Article</h1>
 <%= render 'form', article: @article %>
 <hr>
-<button type="submit" style = "width: 70px; height: 25px;"><%= link_to 'tweet', post_articles_path %></button>
+<button type="submit" class="btn btn-primary"><%= link_to 'tweet', post_articles_path %></button>
 <%= link_to 'Back', articles_path %>
