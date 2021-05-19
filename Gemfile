@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 #Use twitter api
 gem 'twitter'
 #Use nokogiri
-gem 'nokogiri', '~> 1.10', '>= 1.10.3'
+gem 'nokogiri', '~> 1.11'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
