@@ -151,6 +151,7 @@ en:
       create: Create %{model}
       submit: Save %{model}
       update: Update %{model}
+      post: "Add a %{model}"
   number:
     currency:
       format:
@@ -213,3 +214,5 @@ en:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
+  view:
+    dounano: dounarunoka shiran

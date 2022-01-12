@@ -3,4 +3,5 @@
 <p>LANG no kankyohensu ha <%=ENV['LANG'] %> dayo.</p>
 
 <p><strong>heroku ran rails db:migrate</strong> wo wasureteta datedeshita... tohoho ;(</p>&#x3082;&#x3057;&#x304b;&#x3057;&#x305f;&#x3089;&#x3053;&#x3046;&#x3057;&#x305f;&#x3089;&#x6587;&#x5b57;&#x304c;&#x8aad;&#x3081;&#x308b;&#x3088;&#x3046;&#x306b;&#x306a;&#x3093;&#x3058;&#x3083;&#x306a;&#x3044;&#x306e;&#x3063;&#x3066;&#x3044;&#x3046;&#x50d5;&#x306e;&#x4e88;&#x6e2c;&#x3088;&#x3069;&#x3046;&#x304b;&#x5f53;&#x305f;&#x308c;</p>
+<%= t('view.dounano') %>
 <%= link_to 'modoru', root_path %>

@@ -12,7 +12,8 @@
   <% end %>
 
   <div class="field">
-	<%= form.label :content %><br>
+	 <label for="content">content:</label> #<%= form.label :content %>
+  <br>
     	<%= form.text_area :content, cols: 40, rows: 7 ,maxlength: 140 %><br>
   </div>
 

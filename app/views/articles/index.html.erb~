@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Articles</h1>
-<p>&#21066;&#38500;&#12364;&#21205;&#20316;&#12375;&#12394;&#12356;&#12398;&#12391;&#12375;&#12400;&#12425;&#12367;&#32232;&#38598;&#12395;&#12392;&#12387;&#12390;&#22793;&#12360;&#12414;&#12377;</p>
+<p>sakujo ga dousa sinainode sibaraku henshu ni totte kaemasu</p>
 <%= link_to 'New Article', new_article_path %>
 <table class="table table-striped">
   <thead>
