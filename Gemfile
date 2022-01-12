@@ -40,7 +40,7 @@ gem 'nokogiri', '~> 1.10', '>= 1.10.3'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-
+gem 'rails-i18n', '~> 5.1' # For 5.0.x, 5.1.x and 5.2.x
 #bootstrap tsukaitaine
 gem 'bootstrap-sass', '~> 3.3.6'
 

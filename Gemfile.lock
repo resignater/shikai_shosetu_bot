@@ -147,9 +147,18 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
+<<<<<<< HEAD
     railties (5.2.3)
       actionpack (= 5.2.3)
       activesupport (= 5.2.3)
+=======
+    rails-i18n (5.1.2)
+      i18n (>= 0.7, < 2)
+      railties (>= 5.0, < 6)
+    railties (5.2.1.1)
+      actionpack (= 5.2.1.1)
+      activesupport (= 5.2.1.1)
+>>>>>>> ce04b822d564957a976f079b875db7b415b400c7
       method_source
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
@@ -234,6 +243,7 @@ DEPENDENCIES
   pg
   puma (~> 3.11)
   rails (~> 5.2.1, >= 5.2.1.1)
+  rails-i18n (~> 5.1)
   sass-rails (~> 5.0)
   selenium-webdriver
   sqlite3
