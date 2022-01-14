@@ -1,5 +1,3 @@
-<<<<<<< HEAD
----
 en:
   activerecord:
     errors:
@@ -217,15 +215,13 @@ en:
     pm: pm
   view:
     dounano: dounarunoka shiran
-=======
 # <%= t('hello') %>
 # yoyakugo true, false, on, off, yes, no
 # describe yoyakugo as below
 # en:
 #   'true': 'foo'
-
-en:
+  content: "content"
   helper:
     hello: "Hello world"
     welcome: "Welcome to Heroku Application!"
->>>>>>> ce04b822d564957a976f079b875db7b415b400c7
+    
