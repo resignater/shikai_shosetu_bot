@@ -7,6 +7,8 @@
   <thead>
     <tr>
       <th>Content</th>
+      <th>ID</th>
+      <th>RT</th>
     </tr>
   </thead>
 
@@ -18,6 +20,8 @@
       <tr>
     <% end %>
         <td><%= article.content %><%= link_to 'Show', article %></td>
+        <td><%= article.url %></td>
+        <td><%= article.rtid %></td>
       </tr>
     <% end %>
   </tbody>
